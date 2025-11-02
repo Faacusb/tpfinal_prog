@@ -50,9 +50,11 @@ class Concesionaria:
         return isinstance(other, Concesionaria) and self.__numero_id == other.__numero_id
 
     def __str__(self):
-        clientes_str = ", ".join(str(c) for c in self.__clientes) if self.__clientes else "sin clientes"
-        sucursales_str = ", ".join(str(s) for s in self.__sucursales) if self.__sucursales else "sin sucursales"
-        vehiculos_str = ", ".join(str(v) for v in self.__vehiculos) if self.__vehiculos else "sin vehiculos"
+        clientes_str = "\n ".join(str(c) for c in self.__clientes) if self.__clientes else "sin clientes"
+        sucursales_str = "\n ".join(str(s) for s in self.__sucursales) if self.__sucursales else "sin sucursales"
+        vehiculos_str = "\n ".join(str(v) for v in self.__vehiculos) if self.__vehiculos else "sin vehiculos"
 
-        return (f"Concesionaria(id={self.__numero_id}, nombre='{self.__nombre}', "
-                f"clientes=[{clientes_str}], sucursales=[{sucursales_str}], vehiculos=[{vehiculos_str}])")
+        return (f"Concesionaria(id={self.__numero_id}, nombre='{self.__nombre}')\n"
+            f"Clientes:\n{clientes_str}\n"
+            f"Sucursales:\n{sucursales_str}\n"
+            f"Vehiculos:\n{vehiculos_str}")
